@@ -2,32 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.hero-section-pattern {
+    background-color: #ffffff;
+    opacity: 1;
+    background-image: linear-gradient(#bebec1 1.4000000000000001px, transparent 1.4000000000000001px),
+        linear-gradient(to right, #bebec1 1.4000000000000001px, #ffffff 1.4000000000000001px);
+    background-size: 28px 28px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.hero-text {
+    color: black;
+    -webkit-text-stroke: 2px black;
+
+    background-image: linear-gradient(to left top, #454545, #5f4d65, #8b4d75, #bc4670, #e54256, #f24f47, #fb6135, #ff741c, #ff812c, #ff8e3b, #ff9a4a, #ffa559);
+    color: transparent;
+    background-clip: text;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.newsletter {
+    color: black;
+    background-image: linear-gradient(to right top, #e30383, #ff385e, #ff6c38, #fb9c0a, #e0c700, #b1cd11, #7bd034, #21d056, #00ab64, #008664, #176156, #2f3d3c);
+    color: transparent;
+    background-clip: text;
+    -webkit-text-stroke: 1.4px black;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.meshBackground {
+    background-color: hsla(181, 100%, 50%, 0.76);
+    background-image:
+        radial-gradient(at 40% 20%, hsla(272, 76%, 83%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(79, 100%, 56%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(245, 100%, 93%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 50%, hsla(230, 100%, 76%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(272, 100%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 100%, hsla(132, 100%, 70%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(233, 100%, 76%, 1) 0px, transparent 50%);
+}
+
+.meshBackground-2 {
+    background-color: #ad99ff;
+    background-image:
+        radial-gradient(at 49% 86%, hsla(175, 85%, 60%, 1) 0px, transparent 50%),
+        radial-gradient(at 59% 55%, hsla(31, 65%, 69%, 1) 0px, transparent 50%),
+        radial-gradient(at 32% 56%, hsla(266, 92%, 74%, 1) 0px, transparent 50%),
+        radial-gradient(at 37% 27%, hsla(79, 97%, 64%, 1) 0px, transparent 50%),
+        radial-gradient(at 54% 22%, hsla(49, 65%, 68%, 1) 0px, transparent 50%),
+        radial-gradient(at 76% 61%, hsla(172, 82%, 67%, 1) 0px, transparent 50%),
+        radial-gradient(at 13% 78%, hsla(46, 75%, 61%, 1) 0px, transparent 50%);
+}
+
+.magic-pattern-plus {
+    background-color: #ffffff;
+    opacity: 1;
+    background-image: radial-gradient(#414142 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#414142 0.7000000000000001px, #ffffff 0.7000000000000001px);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+}
+
+.clipPathDesign {
+    clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)
+}
+
+.clipPathDesign-2 {
+    enable-background: new 0 0 60.002 60.002;
+}
+
+.grid-lauout-design {
+    background-color: transparent;
+    opacity: 1;
+    background-image: linear-gradient(#62626f26 1px, transparent 1px), linear-gradient(to right, #62626f46 .5px, #ffffff00 1px);
+    background-size: 180px 180px;
+}
+
+.floating-div1 {
+    position: relative;
+    top: 50%;
+    animation: floatAnimation 5s linear infinite;
+    animation-delay: 1s;
+}
+
+.floating-div2 {
+    position: relative;
+    top: 50%;
+    animation: floatAnimation 7s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.floating-div3 {
+    position: relative;
+    top: 0%;
+    animation: floatAnimation 8s ease-in-out infinite;
+    animation-delay: 2.5s;
+}
+
+
+@keyframes floatAnimation {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: calc(20% - 60px);
+        /* Assuming the viewport width as 100% */
+    }
+
+    100% {
+        top: 0;
+    }
 }
