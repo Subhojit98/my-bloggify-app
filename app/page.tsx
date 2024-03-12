@@ -1,8 +1,6 @@
 import Hero from "./components/Hero";
 import LatestPodcasts from "./components/LatestPodcasts";
-import Newslatter from "./components/Newslatter";
-import RecentBlogs from "./components/RecentBlogs";
-
+import RecentBlogs from "./components/RecentNews";
 
 export default function Home() {
   return (
@@ -10,7 +8,6 @@ export default function Home() {
       <Hero />
       <LatestPodcasts />
       <RecentBlogs />
-      <Newslatter />
     </>
   )
 }

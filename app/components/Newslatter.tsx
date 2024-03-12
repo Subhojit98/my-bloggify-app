@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Newslatter = () => {
     return (
         <>
-            <section className="relative py-20 md:py-24 overflow-hidden">
+            <section className="relative py-20 md:py-24 overflow-hidden" id='subscribe-section'>
                 <Image className="absolute top-0 right-0 lg:w-125 -mr-40 md:-mr-24 lg:-mr-0 z-10" src={startImage} alt="" />
                 <div className="container px-4 mx-auto">
                     <div className="relative max-w-7xl pt-32 pb-24 md:pt-24 px-6 md:px-16 mx-auto">
