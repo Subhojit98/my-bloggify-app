@@ -4,13 +4,53 @@ import micImage from '@/app/assets/images/icons8-microphone-100.png'
 import notesImage from '@/app/assets/images/icons8-notes-100.png'
 import laptopsImage from '@/app/assets/images/icons8-laptop-100.png'
 import { Roboto_Mono } from "next/font/google"
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
+import { useEffect, useState } from "react"
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"] })
 const Hero = () => {
+    const [isDialogOpen, setIsDialogOpen] = useState(false)
+
+    useEffect(() => {
+        const openDialogTime = setTimeout(() => {
+            setIsDialogOpen(true)
+
+        }, 3000)
+
+        return () => {
+            clearTimeout(openDialogTime)
+        }
+    }, [])
+
+
     return (
         <>
             <section className="mt-24  hero-section-pattern relative">
+                {/* for Alert -> */}
+                <AlertDialog open={isDialogOpen}>
+                    <AlertDialogContent>
+                        <AlertDialogHeader>
+                            <AlertDialogTitle className="text-amber-500">Attention Please !!</AlertDialogTitle>
+                            <AlertDialogDescription>
+                                This Application is build for testing purpose only. and Dont have the access to the full news content. Also the articles count can be shown is 10 due to the limitation of the API 🙏🏼.
+                            </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                            <AlertDialogAction onClick={() => setIsDialogOpen(false)}>Yep! I understand.</AlertDialogAction>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                </AlertDialog>
 
+                {/* Hero starts -> */}
                 <div className="flex justify-between">
                     <Image src={micImage} alt="mic image" className=" md:mx-10 lg:w-32" />
                 </div>

@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Newslatter from "./components/Newslatter";
 import ActiclesProvider from "./Providers/ActiclesProvider";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -26,6 +28,8 @@ export default function RootLayout({
           {children}
           <Newslatter />
           <Footer />
+          <ReactQueryDevtools initialIsOpen={false} />
+
         </body>
       </ActiclesProvider>
     </html>
