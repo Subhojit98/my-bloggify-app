@@ -7,7 +7,6 @@ import { Roboto_Mono } from "next/font/google"
 import {
     AlertDialog,
     AlertDialogAction,
-    AlertDialogCancel,
     AlertDialogContent,
     AlertDialogDescription,
     AlertDialogFooter,
@@ -21,13 +20,14 @@ const Hero = () => {
     const [isDialogOpen, setIsDialogOpen] = useState(false)
 
     useEffect(() => {
-        const openDialogTime = setTimeout(() => {
-            setIsDialogOpen(true)
 
-        }, 3000)
+        if (sessionStorage.getItem('alert') === 'true') {
+            setIsDialogOpen(false)
+        }
+        else {
+            sessionStorage.setItem('alert', 'true')
+            setTimeout(() => setIsDialogOpen(true), 2000)
 
-        return () => {
-            clearTimeout(openDialogTime)
         }
     }, [])
 
